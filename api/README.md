@@ -8,9 +8,6 @@ The ParallelCluster API specification, defined in the `spec/` directory, is avai
 The OpenAPI definition can be found in the `spec/openapi/ParallelCluster.openapi.yaml` file while the Smithy model is
 defined in the `spec/smithy` directory.
 
-
-
-
 The OpenAPI model can be automatically generated from the Smithy one by using the following Gradle task:
 ```bash
 ./gradlew buildSmithyModel
