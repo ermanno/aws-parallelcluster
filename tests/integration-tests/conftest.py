@@ -1196,14 +1196,14 @@ def odcr_stack(request, region, placement_group_stack, cfn_stacks_factory, vpc_s
         "integTestsOpenOdcr",
         AvailabilityZone=default_public_az,
         InstanceCount=4,
-        InstancePlatform="Linux/UNIX",
+        InstancePlatform="Red Hat Enterprise Linux",
         InstanceType="m5.2xlarge",
     )
     target_odcr = ec2.CapacityReservation(
         "integTestsTargetOdcr",
         AvailabilityZone=default_public_az,
         InstanceCount=4,
-        InstancePlatform="Linux/UNIX",
+        InstancePlatform="Red Hat Enterprise Linux",
         InstanceType="r5.xlarge",
         InstanceMatchCriteria="targeted",
     )
@@ -1212,7 +1212,7 @@ def odcr_stack(request, region, placement_group_stack, cfn_stacks_factory, vpc_s
         "integTestsPgOdcr",
         AvailabilityZone=default_public_az,
         InstanceCount=2,
-        InstancePlatform="Linux/UNIX",
+        InstancePlatform="Red Hat Enterprise Linux",
         InstanceType="m5.xlarge",
         InstanceMatchCriteria="targeted",
         PlacementGroupArn=boto3.resource("ec2").PlacementGroup(pg_name).group_arn,
@@ -1260,14 +1260,14 @@ def odcr_stack(request, region, placement_group_stack, cfn_stacks_factory, vpc_s
         "az1Odcr",
         AvailabilityZone=availability_zone_1,
         InstanceCount=2,
-        InstancePlatform="Linux/UNIX",
+        InstancePlatform="Red Hat Enterprise Linux",
         InstanceType="t3.micro",
     )
     az2_odcr = ec2.CapacityReservation(
         "az2Odcr",
         AvailabilityZone=availability_zone_2,
         InstanceCount=2,
-        InstancePlatform="Linux/UNIX",
+        InstancePlatform="Red Hat Enterprise Linux",
         InstanceType="t3.micro",
     )
     multi_az_odcr_group = resourcegroups.Group(
